@@ -14,7 +14,7 @@ const Navbar = () => {
       <ul>
         <li className="logo">
           <img src={Temple} alt="dojo logo" />
-          <span>Dojo</span>
+          <span>Task Box</span>
         </li>
         {!user ? (
           <>

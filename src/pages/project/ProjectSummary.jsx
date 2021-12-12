@@ -1,17 +1,56 @@
+import { useState, createRef, useEffect } from 'react';
 import Avatar from '../../components/Avatar';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useNavigate } from 'react-router-dom';
+import StatusDropDown from '../../components/StatusDropDown';
 
 const ProjectSummary = ({ project }) => {
   const navigate = useNavigate();
-  const { deleteDocument } = useFirestore('projects');
+  const { deleteDocument, updateDocument, response } = useFirestore('projects');
   const { user } = useAuthContext();
+  const [show, setShow] = useState(false);
+  const ref = createRef();
 
   const handleClick = (e) => {
     deleteDocument(project.id);
     navigate('/');
   };
+
+  const showDropDown = () => {
+    setShow(true);
+  };
+
+  const hideDropDown = () => {
+    setShow(false);
+  };
+
+  const handleSetstatus = async (value) => {
+    await updateDocument(project.id, {
+      status: value,
+    });
+    setShow(false);
+  };
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (show && ref.current && !ref.current.contains(e.target)) {
+        console.log(ref.current);
+        setShow(false);
+      }
+    };
+
+    document.addEventListener('mousedown', checkIfClickedOutside);
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+    };
+  }, [show, ref]);
+
+  const isAssignedUser = project.assignedUsersList.some(
+    (u) => u.id === user.uid
+  );
 
   return (
     <div>
@@ -22,6 +61,26 @@ const ProjectSummary = ({ project }) => {
           Project due by {project.dueDate.toDate().toDateString()}
         </p>
         <p className="details">{project.details}</p>
+        <div className="status-wrap">
+          {isAssignedUser || user.uid === project.createdBy.id ? (
+            <div className="status-title" onClick={() => showDropDown(user.id)}>
+              <p>Status</p>
+              <div className="status-img"></div>
+            </div>
+          ) : (
+            <p>Status</p>
+          )}
+          <p className="status-detail">
+            {project.status ? project.status : 'None yet'}
+          </p>
+          {show ? (
+            <StatusDropDown
+              ref={ref}
+              hideDropDown={hideDropDown}
+              handleSetstatus={handleSetstatus}
+            />
+          ) : null}
+        </div>
         <h4>Project is assigned to:</h4>
         <div className="assigned-users">
           {project.assignedUsersList.map((user) => (
@@ -33,7 +92,7 @@ const ProjectSummary = ({ project }) => {
       </div>
       {user.uid === project.createdBy.id && (
         <button className="btn" onClick={handleClick}>
-          Mark as Cimplete
+          Mark as Complete
         </button>
       )}
     </div>
