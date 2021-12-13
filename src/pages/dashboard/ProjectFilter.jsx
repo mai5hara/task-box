@@ -16,7 +16,6 @@ const ProjectFilter = ({ currentFilter, changeFilter }) => {
   return (
     <div className="project-filter">
       <nav>
-        <p>Filter by:</p>
         {filterList.map((f) => (
           <button
             key={f}

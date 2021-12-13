@@ -36,3 +36,32 @@
   width: 30px;
   height: 30px;
 }
+
+.category-tag {
+  padding: 0 8px;
+  font-size: 0.8em !important;
+  border-radius: 5px;
+  color: #fff !important;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.category-mine {
+  background-color: rgb(168, 122, 255);
+}
+
+.category-design {
+  background-color: rgb(50, 212, 118);
+}
+
+.category-dev {
+  background-color: rgb(58, 151, 238);
+}
+
+.category-marketing {
+  background-color: rgb(251, 122, 251);
+}
+
+.category-sales {
+  background-color: rgb(246, 157, 74);
+}
