@@ -114,12 +114,32 @@
   transition: all 0.5s;
 }
 
+.page-title-icon-link {
+  text-decoration: none;
+}
+
+.page-title-icons-wrap {
+  display: flex;
+}
+
 .page-title-icon-bg:hover {
   background-color: #cecece;
 }
 
 .page-title-icon {
   color: #222222;
+}
+
+.edit-icon {
+  margin-right: 10px;
+  width: 80px;
+  border-radius: 100px;
+}
+
+.page-title-icon-text {
+  color: #222222;
+  padding-left: 10px;
+  font-size: 0.9em;
 }
 
 .status-img {

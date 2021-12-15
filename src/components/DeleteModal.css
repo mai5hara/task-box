@@ -1,0 +1,35 @@
+.modal-card-head {
+  background-color: #fff !important;
+  border-bottom: none !important;
+}
+
+.modal-card {
+  width: 400px !important;
+}
+
+.delete {
+  margin-left: auto;
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+}
+
+.modal-card-body {
+  text-align: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 50px 0 !important;
+  position: relative;
+}
+
+.modal-background {
+  background-color: rgba(58, 58, 58, 0.65) !important;
+}
+
+.modal-card-foot {
+  justify-content: center !important;
+}
+
+.button {
+  min-width: 136px;
+}
