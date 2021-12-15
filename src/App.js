@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import Dashboard from './pages/dashboard/Dashboard';
 import Create from './pages/create/Create';
+import Edit from './pages/edit/Edit';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Project from './pages/project/Project';
@@ -30,6 +31,10 @@ function App() {
               <Route
                 path="/create"
                 element={user ? <Create /> : <Navigate replace to="/login" />}
+              />
+              <Route
+                path="/edit/:id"
+                element={user ? <Edit /> : <Navigate replace to="/login" />}
               />
               <Route
                 path="/projects/:id"

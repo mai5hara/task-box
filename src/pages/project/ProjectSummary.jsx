@@ -1,4 +1,7 @@
 import { useState, createRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import Avatar from '../../components/Avatar';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useAuthContext } from '../../hooks/useAuthContext';
@@ -55,7 +58,14 @@ const ProjectSummary = ({ project }) => {
   return (
     <div>
       <div className="project-summary">
-        <h2 className="page-title">{project.name}</h2>
+        <div className="page-title-wrap">
+          <h2 className="page-title">{project.name}</h2>
+          <Link to={`/edit/${project.id}`}>
+            <div className="page-title-icon-bg">
+              <FontAwesomeIcon className="page-title-icon" icon={faPencilAlt} />
+            </div>
+          </Link>
+        </div>
         <p>By {project.createdBy.displayName}</p>
         <p className="due-date">
           Project due by {project.dueDate.toDate().toDateString()}

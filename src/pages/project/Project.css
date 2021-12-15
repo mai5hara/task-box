@@ -83,6 +83,12 @@
   transform: scale(0.7);
 } */
 
+.page-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .status-title {
   display: flex;
   justify-content: space-between;
@@ -93,6 +99,27 @@
 .status-title p,
 .status-img {
   transition: all 0.5s;
+}
+
+.page-title-icon-bg {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px rgb(216, 216, 216);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.page-title-icon-bg:hover {
+  background-color: #cecece;
+}
+
+.page-title-icon {
+  color: #222222;
 }
 
 .status-img {
