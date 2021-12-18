@@ -1,0 +1,15 @@
+@media only screen and (max-width: 599px) {
+  .btn-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-wrap .btn {
+    width: 48%;
+  }
+  .back-btn-link {
+    width: 48%;
+  }
+  .back-btn-link .back-btn {
+    width: 100%;
+  }
+}

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -13,14 +14,29 @@ import './App.css';
 
 function App() {
   const { user, authIsReady } = useAuthContext();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleToggle = () => {
+    console.log(isSidebarOpen);
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <div className="App">
+      <div
+        className={`overlay ${isSidebarOpen ? 'overlay-visible' : ''}`}
+        onClick={handleToggle}
+      ></div>
       {authIsReady && (
         <BrowserRouter>
-          {user && <Sidebar />}
+          {user && (
+            <Sidebar
+              isSidebarOpen={isSidebarOpen}
+              handleToggle={handleToggle}
+            />
+          )}
           <div className="container">
-            <Navbar />
+            <Navbar handleToggle={handleToggle} isSidebarOpen={isSidebarOpen} />
             <Routes>
               <Route
                 path="/"

@@ -1,34 +1,36 @@
-import './Navbar.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 import Temple from '../assets/temple.svg';
+import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ handleToggle, isSidebarOpen }) => {
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
 
   return (
     <div className="navbar">
-      <ul>
-        <li className="logo">
+      <div className="logo">
+        <Link to="/">
           <img src={Temple} alt="dojo logo" />
           <span>Task Box</span>
-        </li>
+        </Link>
+      </div>
+      <div>
         {!user ? (
           <>
-            <li>
+            <div>
               <Link to="login">Login</Link>
-            </li>
-            <li>
+            </div>
+            <div>
               <Link to="Signup">Signup</Link>
-            </li>
+            </div>
           </>
         ) : (
-          <li>
+          <div>
             {!isPending && (
-              <button className="btn" onClick={logout}>
+              <button className="btn logout-btn" onClick={logout}>
                 Logout
               </button>
             )}
@@ -37,9 +39,14 @@ const Navbar = () => {
                 Logging out...
               </button>
             )}
-          </li>
+          </div>
         )}
-      </ul>
+        <div onClick={handleToggle} className="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
   );
 };

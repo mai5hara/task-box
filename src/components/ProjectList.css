@@ -1,9 +1,9 @@
 .project-list {
   margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 20px;
+  display: flex;
+  justify-content: space-between;
 }
+
 .project-list a {
   background-color: #fff;
   padding: 16px;
@@ -11,6 +11,7 @@
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
   text-decoration: none;
   color: inherit;
+  width: 48%;
 }
 .project-list h4 {
   font-size: 0.9em;
@@ -37,7 +38,7 @@
   height: 30px;
 }
 
-.category-tag {
+.project-list .category-tag {
   padding: 0 8px;
   font-size: 0.8em !important;
   border-radius: 5px;
@@ -46,22 +47,35 @@
   margin-bottom: 5px;
 }
 
-.category-mine {
+.project-list category-mine {
   background-color: rgb(168, 122, 255);
 }
 
-.category-design {
+.project-list .category-design {
   background-color: rgb(50, 212, 118);
 }
 
-.category-dev {
+.project-list .category-dev {
   background-color: rgb(58, 151, 238);
 }
 
-.category-marketing {
+.project-list .category-marketing {
   background-color: rgb(251, 122, 251);
 }
 
-.category-sales {
+.project-list .category-sales {
   background-color: rgb(246, 157, 74);
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-list {
+    flex-direction: column;
+  }
+  .project-list a {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .project-list a:last-child {
+    margin-bottom: 0;
+  }
 }

@@ -14,18 +14,22 @@ const ProjectFilter = ({ currentFilter, changeFilter }) => {
   };
 
   return (
-    <div className="project-filter">
-      <nav>
-        {filterList.map((f) => (
-          <button
-            key={f}
-            onClick={() => handleClick(f)}
-            className={currentFilter === f ? 'active' : ''}
-          >
-            {f}
-          </button>
-        ))}
-      </nav>
+    <div>
+      <div className="tabs is-centered">
+        <ul>
+          {filterList.map((f) => (
+            <li
+              key={f}
+              onClick={() => handleClick(f)}
+              className={`${
+                currentFilter === f ? 'is-active' : ''
+              } filter-list`}
+            >
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

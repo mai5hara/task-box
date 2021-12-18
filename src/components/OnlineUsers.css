@@ -5,12 +5,13 @@
   box-sizing: border-box;
   background: #fbfbfb;
   color: var(--heading-color);
+  z-index: 99;
 }
 .user-list h2 {
   text-align: right;
   margin-bottom: 40px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-color);
   font-size: 1.2em;
 }
 .user-list .user-list-item {
@@ -33,4 +34,10 @@
   background: #0ebb50;
   border-radius: 50%;
   margin-top: 2px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .user-list {
+    display: none;
+  }
 }

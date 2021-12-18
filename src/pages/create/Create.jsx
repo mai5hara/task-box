@@ -80,7 +80,7 @@ const Create = () => {
   };
 
   return (
-    <div className="create-form">
+    <div className="create-form page-container">
       <h2 className="page-title">Create a new project</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -90,6 +90,7 @@ const Create = () => {
             type="text"
             onChange={(e) => setName(e.target.value)}
             value={name}
+            className="input"
           />
         </label>
         <label>
@@ -99,6 +100,7 @@ const Create = () => {
             type="text"
             onChange={(e) => setDetails(e.target.value)}
             value={details}
+            className="textarea"
           ></textarea>
         </label>
         <label>
@@ -108,6 +110,7 @@ const Create = () => {
             type="date"
             onChange={(e) => setDueDate(e.target.value)}
             value={dueDate}
+            className="input"
           />
         </label>
         <label>

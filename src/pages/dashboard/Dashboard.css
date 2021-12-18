@@ -1,29 +1,35 @@
-.project-filter {
-  margin: 30px auto;
+.tabs {
+  margin-top: 30px;
 }
-.project-filter nav {
+
+.page-container {
+  padding: 120px 40px 40px 40px;
+}
+
+.filter-list {
+  width: 17%;
+  text-align: center;
   display: flex;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 4px;
+  justify-content: center;
+  margin-bottom: -1px;
+  padding: 0.5em 1em;
+  vertical-align: top;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  align-items: center;
+  border-bottom-color: #dbdbdb;
 }
-.project-filter p {
-  font-size: 0.9em;
-  margin-right: 10px;
+
+.is-active {
+  border-bottom-color: #485fc7;
+  color: #485fc7;
 }
-.project-filter button {
-  background: transparent;
-  border: 0;
-  font-family: inherit;
-  font-weight: bold;
-  color: var(--text-color);
-  cursor: pointer;
-  border-right: 1px solid #e4e4e4;
-  font-size: 0.9em;
-}
-.project-filter button:last-child {
-  border: 0;
-}
-.project-filter button.active {
-  color: var(--primary-color);
+
+@media only screen and (max-width: 769px) {
+  .page-container {
+    padding: 100px 15px 30px 15px;
+  }
+  .filter-list {
+    width: 26%;
+  }
 }

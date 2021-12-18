@@ -37,6 +37,13 @@
   margin-top: 20px;
 }
 
+.back-btn {
+  color: var(--primary-color);
+  background-color: #ffffff;
+  border: 1px solid var(--primary-color);
+  margin-right: 15px;
+}
+
 /* project comments */
 .project-comments label {
   margin-bottom: 0px;
@@ -71,17 +78,14 @@
 .comment-date {
   color: var(--text-color);
   font-size: 0.9em;
-  margin: 4px 0 10px;
+  margin: 6px 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
 }
 .comment-content {
   color: var(--text-color);
   font-size: 0.9em;
 }
-
-/* .status-img {
-  overflow: unset;
-  transform: scale(0.7);
-} */
 
 .page-title-wrap {
   display: flex;
@@ -159,11 +163,11 @@
 }
 
 .status-title:hover p {
-  color: rgb(49, 87, 255);
+  color: var(--primary-color);
 }
 
 .status-wrap {
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
   padding-top: 10px;
   margin-bottom: 10px;
   font-size: 0.9rem;
@@ -173,4 +177,14 @@
 
 .status-detail {
   color: #8a8a8a;
+}
+
+.add-comment .btn {
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-details {
+    grid-template-columns: unset;
+  }
 }

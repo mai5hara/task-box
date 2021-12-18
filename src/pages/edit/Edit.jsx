@@ -114,7 +114,7 @@ const Edit = () => {
   };
 
   return (
-    <div className="create-form">
+    <div className="create-form page-container">
       <h2 className="page-title">Edit a project</h2>
       {!document || !defaultCategory || defaultAssignedUsers.length === 0 ? (
         <p>loading...</p>
@@ -127,6 +127,7 @@ const Edit = () => {
               type="text"
               onChange={(e) => setName(e.target.value)}
               value={name}
+              className="input"
             />
           </label>
           <label>
@@ -136,6 +137,7 @@ const Edit = () => {
               type="text"
               onChange={(e) => setDetails(e.target.value)}
               value={details}
+              className="textarea"
             ></textarea>
           </label>
           <label>
@@ -145,6 +147,7 @@ const Edit = () => {
               type="date"
               onChange={(e) => setDueDate(e.target.value)}
               value={dueDate}
+              className="input"
             />
           </label>
           <label>
@@ -164,10 +167,12 @@ const Edit = () => {
               isMulti
             />
           </label>
-          <Link to={`/projects/${id}`}>
-            <button>Back</button>
-          </Link>
-          <button className="btn">Save Changes</button>
+          <div className="btn-wrap">
+            <Link to={`/projects/${id}`} className="back-btn-link">
+              <button className="btn back-btn">Back</button>
+            </Link>
+            <button className="btn">Save Changes</button>
+          </div>
           {formError && <p className="error">{formError}</p>}
         </form>
       )}

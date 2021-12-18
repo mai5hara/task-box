@@ -16,7 +16,7 @@ const Project = () => {
   }
 
   return (
-    <div className="project-details">
+    <div className="project-details page-container">
       <ProjectSummary project={document} />
       <ProjectComments project={document} />
     </div>

@@ -40,7 +40,7 @@ const Dashboard = () => {
     : null;
 
   return (
-    <div>
+    <div className="page-container">
       <h2 className="page-title">Dashboard</h2>
       {error && <p className="error">{error}</p>}
       {documents && (
