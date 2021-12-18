@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
+import useWindowSize from './hooks/useWindowSize';
 import Dashboard from './pages/dashboard/Dashboard';
 import Create from './pages/create/Create';
 import Edit from './pages/edit/Edit';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Project from './pages/project/Project';
+import Users from './pages/users/Users';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import OnlineUsers from './components/OnlineUsers';
@@ -15,6 +17,7 @@ import './App.css';
 function App() {
   const { user, authIsReady } = useAuthContext();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const size = useWindowSize();
 
   const handleToggle = () => {
     console.log(isSidebarOpen);
@@ -56,6 +59,12 @@ function App() {
                 path="/projects/:id"
                 element={user ? <Project /> : <Navigate replace to="/login" />}
               />
+              {size.width < 1025 ? (
+                <Route
+                  path="/users"
+                  element={user ? <Users /> : <Navigate replace to="/login" />}
+                />
+              ) : null}
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate replace to="/" />}
@@ -66,7 +75,7 @@ function App() {
               />
             </Routes>
           </div>
-          {user && <OnlineUsers />}
+          {size.width > 1024 ? <OnlineUsers /> : null}
         </BrowserRouter>
       )}
     </div>
