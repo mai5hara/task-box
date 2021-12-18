@@ -18,9 +18,13 @@ const Sidebar = ({ isSidebarOpen, handleToggle }) => {
   const { user } = useAuthContext();
   const size = useWindowSize();
 
-  const navLink = (to, children) => {
+  const navLink = (to, children, displayClass) => {
     if (size.width > 768) {
-      return <NavLink to={to}>{children}</NavLink>;
+      return (
+        <NavLink to={to} className={displayClass}>
+          {children}
+        </NavLink>
+      );
     } else {
       return (
         <NavLink to={to} onClick={handleToggle}>
@@ -68,7 +72,8 @@ const Sidebar = ({ isSidebarOpen, handleToggle }) => {
                     <FontAwesomeIcon icon={faUser} alt="all users icon" />
                   </div>
                   <span>All Users</span>
-                </>
+                </>,
+                'all-users'
               )}
             </li>
           </ul>

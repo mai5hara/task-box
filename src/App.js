@@ -20,7 +20,6 @@ function App() {
   const size = useWindowSize();
 
   const handleToggle = () => {
-    console.log(isSidebarOpen);
     setIsSidebarOpen(!isSidebarOpen);
   };
 
@@ -38,7 +37,7 @@ function App() {
               handleToggle={handleToggle}
             />
           )}
-          <div className="container">
+          <div className={`container ${isSidebarOpen && 'container-fixed'}`}>
             <Navbar handleToggle={handleToggle} isSidebarOpen={isSidebarOpen} />
             <Routes>
               <Route
@@ -75,7 +74,7 @@ function App() {
               />
             </Routes>
           </div>
-          {size.width > 1024 ? <OnlineUsers /> : null}
+          {user && size.width > 1024 ? <OnlineUsers /> : null}
         </BrowserRouter>
       )}
     </div>

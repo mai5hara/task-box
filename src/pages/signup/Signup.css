@@ -1,8 +1,17 @@
 .auth-form {
   max-width: 360px;
-  margin: 60px auto;
+  margin: 10px auto;
   padding: 40px;
   border: 1px solid #ddd;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
   background: #fff;
+}
+.auth-form h2 {
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 768px) {
+  .auth-form {
+    margin: 20px auto;
+  }
 }
