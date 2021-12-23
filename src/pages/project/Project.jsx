@@ -2,6 +2,7 @@ import { useParams } from 'react-router';
 import { useDocument } from '../../hooks/useDocument';
 import ProjectSummary from './ProjectSummary';
 import ProjectComments from './ProjectComments';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 import './Project.css';
 
 const Project = () => {
@@ -12,7 +13,11 @@ const Project = () => {
     return <div className="error">{error}</div>;
   }
   if (!document) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div className="spinner">
+        <PacmanLoader size={40} color={'#286be7'} />
+      </div>
+    );
   }
 
   return (

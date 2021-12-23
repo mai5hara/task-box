@@ -9,6 +9,7 @@ import { useCollection } from '../../hooks/useCollection';
 import { timestamp } from '../../firebase/config';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useNavigate } from 'react-router-dom';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 import './Edit.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -117,7 +118,9 @@ const Edit = () => {
     <div className="create-form page-container">
       <h2 className="page-title">Edit a project</h2>
       {!document || !defaultCategory || defaultAssignedUsers.length === 0 ? (
-        <p>loading...</p>
+        <div className="spinner">
+          <PacmanLoader size={40} color={'#286be7'} />
+        </div>
       ) : (
         <form onSubmit={handleSubmit}>
           <label>
