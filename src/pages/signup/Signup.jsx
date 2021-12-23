@@ -79,12 +79,14 @@ const Signup = () => {
           <input required type="file" onChange={handleFileChange} />
           {thumbnailError && <div className="error">{thumbnailError}</div>}
         </label>
-        {!isPending && <button className="btn">Sign up</button>}
-        {isPending && (
-          <button className="btn" disabled>
-            loading
-          </button>
-        )}
+        <div className="auth-btn-wrap">
+          {!isPending && <button className="btn">Sign up</button>}
+          {isPending && (
+            <button className="btn" disabled>
+              loading
+            </button>
+          )}
+        </div>
         {error && <div className="error">{error}</div>}
       </form>
     </div>

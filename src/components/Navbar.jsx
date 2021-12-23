@@ -48,9 +48,9 @@ const Navbar = ({ handleToggle }) => {
               </div>
             )}
             {isPending && (
-              <button className="btn" disabled onClick={logout}>
+              <div className="logout-btn" disabled onClick={logout}>
                 Logging out...
-              </button>
+              </div>
             )}
           </div>
         )}

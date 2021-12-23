@@ -36,12 +36,14 @@ const Login = () => {
             className="input"
           />
         </label>
-        {!isPending && <button className="btn">Login</button>}
-        {isPending && (
-          <button className="btn" disabled>
-            loading
-          </button>
-        )}
+        <div className="auth-btn-wrap">
+          {!isPending && <button className="btn">Login</button>}
+          {isPending && (
+            <button className="btn" disabled>
+              loading
+            </button>
+          )}
+        </div>
         {error && <div className="error">{error}</div>}
       </form>
     </div>
