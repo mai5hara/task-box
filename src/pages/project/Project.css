@@ -193,4 +193,8 @@
   .project-details {
     grid-template-columns: unset;
   }
+
+  .project-details .spinner {
+    margin-top: 40px;
+  }
 }

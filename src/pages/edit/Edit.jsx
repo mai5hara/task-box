@@ -10,6 +10,7 @@ import { timestamp } from '../../firebase/config';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useNavigate } from 'react-router-dom';
 import PacmanLoader from 'react-spinners/PacmanLoader';
+import useWindowSize from '../../hooks/useWindowSize';
 import './Edit.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -37,6 +38,7 @@ const Edit = () => {
   const { document, error } = useDocument('projects', id);
   const { updateDocument, response } = useFirestore('projects');
   const { documents } = useCollection('users');
+  const size = useWindowSize();
 
   useEffect(() => {
     if (documents) {
@@ -119,7 +121,7 @@ const Edit = () => {
       <h2 className="page-title">Edit a project</h2>
       {!document || !defaultCategory || defaultAssignedUsers.length === 0 ? (
         <div className="spinner">
-          <PacmanLoader size={40} color={'#286be7'} />
+          <PacmanLoader size={size.width > 1025 ? 40 : 20} color={'#286be7'} />
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
