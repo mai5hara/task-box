@@ -19,18 +19,21 @@
 }
 .project-summary .due-date {
   margin: 10px 0;
-  font-size: 0.9em;
+  font-size: 1.4rem;
   color: var(--title-color);
 }
 .project-summary .details {
-  margin: 30px 0;
+  margin: 20px 0;
   color: var(--text-color);
-  line-height: 1.8em;
-  font-size: 0.9em;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  font-family: noto-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .project-summary h4 {
   color: var(--text-color);
-  font-size: 0.9em;
+  font-size: 1.6rem;
 }
 .project-summary .assigned-users {
   display: flex;
@@ -56,7 +59,7 @@
 }
 .project-comments textarea {
   min-height: 40px;
-  font-size: 1.5em;
+  font-size: 1.6rem;
 }
 
 /* comment list */
@@ -83,14 +86,14 @@
 }
 .comment-date {
   color: var(--text-color);
-  font-size: 0.9em;
+  font-size: 1.6rem;
   margin: 6px 0 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border-color);
 }
 .comment-content {
   color: var(--text-color);
-  font-size: 0.9em;
+  font-size: 1.6rem;
 }
 
 .page-title-wrap {
@@ -149,7 +152,7 @@
 .page-title-icon-text {
   color: #222222;
   padding-left: 10px;
-  font-size: 0.9em;
+  font-size: 1.6rem;
 }
 
 .status-img {
@@ -176,13 +179,14 @@
   border-top: 1px solid var(--border-color);
   padding-top: 10px;
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   cursor: pointer;
   position: relative;
 }
 
 .status-detail {
   color: #8a8a8a;
+  font-size: 1.4rem;
 }
 
 .add-comment .btn {

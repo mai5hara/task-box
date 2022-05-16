@@ -15,7 +15,6 @@ export const useLogout = () => {
     try {
       // update online status
       const { uid } = user;
-      console.log(uid)
       await projectFirestore
         .collection('users')
         .doc(uid)
@@ -34,7 +33,6 @@ export const useLogout = () => {
       }
     } catch (err) {
       if (!isCancelled) {
-        console.log('err.message',err.message)
         setError(err.message);
         setIsPending(false);
       }

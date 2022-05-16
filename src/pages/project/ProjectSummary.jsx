@@ -53,7 +53,6 @@ const ProjectSummary = ({ project }) => {
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       if (show && ref.current && !ref.current.contains(e.target)) {
-        console.log(ref.current);
         setShow(false);
       }
     };

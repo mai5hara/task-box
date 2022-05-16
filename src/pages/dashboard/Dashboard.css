@@ -12,13 +12,14 @@
   display: flex;
   justify-content: center;
   margin-bottom: -1px;
-  padding: 0.5em 1em;
+  padding: 1rem 0.5rem;
   vertical-align: top;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   align-items: center;
   border-bottom-color: #dbdbdb;
   cursor: pointer;
+  font-size: 1.4rem;
 }
 
 .is-active {

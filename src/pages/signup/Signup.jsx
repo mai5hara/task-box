@@ -18,7 +18,6 @@ const Signup = () => {
   const handleFileChange = (e) => {
     settThumbnail(null);
     let selected = e.target.files[0];
-    console.log(selected);
 
     if (!selected) {
       settThumbnailError('Please select a file');
@@ -37,7 +36,6 @@ const Signup = () => {
 
     settThumbnailError(null);
     settThumbnail(selected);
-    console.log('thumbnail ipdated');
   };
 
   return (

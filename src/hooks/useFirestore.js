@@ -44,14 +44,12 @@ export const useFirestore = (collection) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
   const [isCancelled, setIsCancelled] = useState(false);
 
-  console.log('isCancelled',isCancelled)
   // collection ref
   const ref = projectFirestore.collection(collection);
 
   // only dispatch is not cancelled
   const dispatchIfNotCancelled = (action) => {
     if (!isCancelled) {
-      console.log('isCancelled dispatchIfNotCancelled',isCancelled)
       dispatch(action);
     }
   };
@@ -87,7 +85,7 @@ export const useFirestore = (collection) => {
   // update documents
   const updateDocument = async (id, updates) => {
     dispatch({ type: 'IS_PENDING' });
-    console.log('updates',updates)
+
     try {
       const updatedDocument = await ref.doc(id).update(updates);
       dispatchIfNotCancelled({
@@ -104,7 +102,6 @@ export const useFirestore = (collection) => {
   useEffect(() => {
     return () => {
       setIsCancelled(true)
-      console.log('isCancelled useEffect',isCancelled)
     };
   }, []);
 
