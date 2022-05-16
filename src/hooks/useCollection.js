@@ -23,9 +23,11 @@ export const useCollection = (collection, _query, _orderBy) => {
     const unsubscribe = ref.onSnapshot(snapshot => {
       let results = []
       snapshot.docs.forEach(doc => {
+        console.log('doc',doc.data(), doc.id)
         results.push({...doc.data(), id: doc.id})
       });
       
+      console.log('results',results)
       // update state
       setDocuments(results)
       setError(null)

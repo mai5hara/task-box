@@ -15,6 +15,7 @@ import './Navbar.css';
 const Navbar = ({ handleToggle }) => {
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
+  console.log(user, isPending);
 
   return (
     <div className={`navbar ${!user && 'not-loggedin'}`}>

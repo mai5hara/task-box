@@ -62,6 +62,7 @@ const Create = () => {
         id: u.value.id,
       };
     });
+    console.log('assignedUsersList',assignedUsersList)
 
     const project = {
       name,

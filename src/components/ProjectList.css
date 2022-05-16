@@ -1,7 +1,6 @@
 .project-list {
   margin-top: 40px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -9,11 +8,18 @@
   background-color: #fff;
   padding: 16px;
   border-radius: 6px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
   text-decoration: none;
   color: inherit;
   width: 32%;
   margin-bottom: 15px;
+  transition: all 0.3s;
+  margin-right: 2%;
+}
+.project-list a:nth-child(3n) {
+  margin-right: 0;
+}
+.project-list a:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 }
 .project-list h4 {
   font-size: 1.2em;

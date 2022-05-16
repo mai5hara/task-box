@@ -1,4 +1,4 @@
-import { useState, createRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ const ProjectSummary = ({ project }) => {
   const { user } = useAuthContext();
   const [show, setShow] = useState(false);
   const [modalActive, setModalActive] = useState(false);
-  const ref = createRef();
+  const ref = useRef();
 
   const handleClick = (e) => {
     deleteDocument(project.id);

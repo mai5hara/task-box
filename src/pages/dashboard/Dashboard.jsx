@@ -9,7 +9,7 @@ const Dashboard = () => {
   const { documents, error } = useCollection('projects');
   const [currentFilter, setCurrentFilter] = useState('all');
   const { user } = useAuthContext();
-
+  console.log('documents',documents)
   const changeFilter = (newFilter) => {
     setCurrentFilter(newFilter);
   };
@@ -31,7 +31,6 @@ const Dashboard = () => {
           case 'design':
           case 'sales':
           case 'marketing':
-            console.log(document.category, currentFilter);
             return document.category === currentFilter;
           default:
             return true;
