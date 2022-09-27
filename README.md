@@ -14,8 +14,8 @@ https://project-management-app-d5021.web.app/
 ## Usage
 
 ```bash
-git clone git@github.com:mai5hara/project-management-app.git
-cd project-management-app
+git clone git@github.com:mai5hara/task-box.git
+cd task-box
 npm start
 ```
 
